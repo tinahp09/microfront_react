@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Header from 'host/components/Header'
-import Login from './components/Login'
+import Register from './components/Register'
 import './index.css'
 
 const App = () => (
-  <div className='container'>
+  <div>
     {/* <Header /> */}
-    <Login />
+    <Register />
   </div>
 )
 ReactDOM.render(<App />, document.getElementById('app'))

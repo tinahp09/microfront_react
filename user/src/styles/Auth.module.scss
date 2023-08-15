@@ -1,46 +1,68 @@
+@import './variables.module.scss';
+input:focus-visible {
+  border: none;
+  outline: none;
+}
 .Login {
-  margin: 50px auto;
-  border: 1px solid;
-  width: 400px;
-  padding: 12px;
-  border-radius: 12px;
-  height: 500px;
-  & h5 {
-    margin: 48px 0 8px 0;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  & .Right {
+    width: 40%;
+    background-color: #ffede1;
+    height: 100vh;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url('../assets/images/backgroundAuth.png');
   }
+  & .Left {
+    width: 60%;
+  }
+
   & .Form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
 
     & label {
-      margin: 8px 0;
+      margin: 14px 0;
       font-size: 16px;
-    }
-    & input {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid;
       width: 70%;
     }
-    & button {
+    & input {
+      padding: 15px 10px;
+      border-radius: 8px;
       border: none;
+      width: 70%;
+      background-color: #fff6f4;
+    }
+    & button {
+      border: 1px solid white;
       background-color: blue;
       padding: 10px 35px;
       margin-top: 3rem;
-      border-radius: 8px;
+      border-radius: 18px;
       color: white;
-      font-size: 14px;
+      font-size: 15px;
+      width: 200px;
       cursor: pointer;
-      background: #0089ff;
-      & :hover {
-        border: 1px solid #0089ff;
-        color: #0089ff;
+      background: #f47458;
+      &:hover {
         background-color: white;
+        border: 1px solid #f47458;
+        color: #f47458;
+        transition: ease-in-out 0.6s;
       }
+    }
+    & p {
+      color: gray;
+    }
+    & .authLink {
+      color: #f47458;
     }
   }
 }
