@@ -1,0 +1,46 @@
+.Login {
+  margin: 50px auto;
+  border: 1px solid;
+  width: 400px;
+  padding: 12px;
+  border-radius: 12px;
+  height: 500px;
+  & h5 {
+    margin: 48px 0 8px 0;
+    text-align: center;
+  }
+  & .Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+
+    & label {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    & input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid;
+      width: 70%;
+    }
+    & button {
+      border: none;
+      background-color: blue;
+      padding: 10px 35px;
+      margin-top: 3rem;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      background: #0089ff;
+      & :hover {
+        border: 1px solid #0089ff;
+        color: #0089ff;
+        background-color: white;
+      }
+    }
+  }
+}
