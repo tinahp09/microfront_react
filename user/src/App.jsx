@@ -1,14 +1,21 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
-import Header from 'host/components/Header'
+import * as ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Register from './components/Register'
-import './index.css'
+import Login from './components/Login'
 
-const App = () => (
-  <div>
-    {/* <Header /> */}
-    <Register />
-  </div>
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Register />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+])
+ReactDOM.createRoot(document.getElementById('app')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
-ReactDOM.render(<App />, document.getElementById('app'))

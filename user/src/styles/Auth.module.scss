@@ -1,8 +1,15 @@
 @import './variables.module.scss';
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 input:focus-visible {
-  border: none;
+  border: 1px solid #f47458;
   outline: none;
 }
+
 .Login {
   display: flex;
   justify-content: space-between;
@@ -30,14 +37,15 @@ input:focus-visible {
 
     & label {
       margin: 14px 0;
-      font-size: 16px;
+      font-size: 18px;
       width: 70%;
     }
     & input {
       padding: 15px 10px;
       border-radius: 8px;
-      border: none;
+      border: 1px solid #9e9e9e;
       width: 70%;
+      font-size: 16px;
       background-color: #fff6f4;
     }
     & button {
@@ -58,11 +66,11 @@ input:focus-visible {
         transition: ease-in-out 0.6s;
       }
     }
+    & .link {
+      color: #f47458;
+    }
     & p {
       color: gray;
-    }
-    & .authLink {
-      color: #f47458;
     }
   }
 }

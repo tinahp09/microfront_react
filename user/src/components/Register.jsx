@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/Auth.module.scss'
-import { login } from '../utilities/AuthService'
+import { register } from '../utilities/AuthService'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+// import AuthLayout from '../layouts/AuthLayout'
 
 export default function Login() {
   const [username, setUsername] = useState('')
@@ -8,13 +11,20 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const navigate = useNavigate()
+
   const data = {
     name: name,
     password: password,
     email: email,
     username: username,
   }
+
+  const registerUser = () => {
+    register(data)
+  }
   return (
+    // <AuthLayout>
     <div className={styles.Login}>
       <div className={styles.Left}>
         <div className={styles.Form}>
@@ -42,18 +52,18 @@ export default function Login() {
             onChange={(evt) => setPassword(evt.target.value)}
             type='password'
           />
-          <button onClick={() => login(data)}>Sign In</button>
+          <button onClick={() => registerUser()}>Sign Up</button>
+
           <p>
-            Already have an account?{' '}
-            <a href='/' className={styles.authLink}>
+            Already have an account?
+            <Link className={styles.link} to={'/login'}>
               login
-            </a>
+            </Link>
           </p>
         </div>
       </div>
-      <div className={styles.Right}>
-        <img src='../assets/images/backgroundAuth.png' alt='' />
-      </div>
+      <div className={styles.Right}></div>
     </div>
+    // </AuthLayout>
   )
 }
