@@ -59,9 +59,13 @@ module.exports = (_, argv) => ({
           singleton: true,
           requiredVersion: deps['react-dom'],
         },
-        swr: {
+        react: {
           singleton: true,
-          requiredVersion: '2.2.0', // Specify the desired version here
+          requiredVersion: '^17.0.2', // Specify the desired version range here
+        },
+        swr: {
+          singleton: false,
+          requiredVersion: '^2.0.1', // Specify the desired version range here
         },
       },
     }),

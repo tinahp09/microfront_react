@@ -12,6 +12,11 @@ function Header() {
       window.location.replace('http://localhost:8081/login')
     }
   }, [token])
+
+  function logout() {
+    cookies.remove('Token')
+    window.location.replace('http://localhost:8081/login')
+  }
   return (
     <header>
       <div className={styles.items}>
@@ -19,13 +24,10 @@ function Header() {
           Welcome Dear <span className={styles.name}>{name}</span>
         </p>
         <div>
-          <a
-            className={styles.link}
-            onClick={() => window.location.replace('http://localhost:8081/')}
-          >
-            register /
+          <a className={styles.link} onClick={() => logout()}>
+            Logout
           </a>
-          <a
+          {/* <a
             className={styles.link}
             onClick={() =>
               window.location.replace('http://localhost:8081/login')
@@ -33,7 +35,7 @@ function Header() {
           >
             {' '}
             login
-          </a>
+          </a> */}
         </div>
       </div>
     </header>

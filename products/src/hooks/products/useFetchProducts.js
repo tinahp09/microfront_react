@@ -15,3 +15,15 @@ export function useFetchAllProducts() {
     isError: error,
   }
 }
+
+export function useFetchSingleProducts(id) {
+  const { data, error } = useSWR(
+    `${Api.defaults.baseURL}/products/${id}`,
+    fetcher
+  )
+  return {
+    allProducts: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}

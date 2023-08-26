@@ -61,7 +61,7 @@ module.exports = (_, argv) => ({
         },
         swr: {
           singleton: true,
-          requiredVersion: '2.2.0', // Specify the desired version here
+          requiredVersion: '^2.0.1', // Specify the desired version range here
         },
       },
     }),

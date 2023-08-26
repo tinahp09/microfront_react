@@ -1,14 +1,21 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Products from './pages/products'
+import SingleProduct from './pages/single-product'
 
-import './index.scss'
-
-const App = () => (
-  <div className='mt-10 text-3xl mx-auto max-w-6xl'>
-    <div>Name: products</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Tailwind</div>
-  </div>
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Products />,
+  },
+  {
+    path: '/product',
+    element: <SingleProduct />,
+  },
+])
+ReactDOM.createRoot(document.getElementById('app')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
-ReactDOM.render(<App />, document.getElementById('app'))
