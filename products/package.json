@@ -1,10 +1,10 @@
 {
-  "name": "host",
+  "name": "products",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "build:start": "cd dist && PORT=8080 npx serve",
+    "build:start": "cd dist && PORT=8082 npx serve",
     "start": "webpack serve --open --mode development",
     "start:live": "webpack serve --open --mode development --live-reload --hot"
   },
@@ -25,17 +25,17 @@
     "postcss": "^8.2.1",
     "postcss-loader": "^4.1.0",
     "style-loader": "^3.3.0",
+    "tailwindcss": "^2.0.2",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "single-spa": "^5.9.5",
-    "swr": "^2.2.0",
-    "universal-cookie": "^5.0.0"
+    "scss": "^0.2.4",
+    "swr": "^2.2.0"
   }
 }
