@@ -45,6 +45,7 @@ module.exports = (_, argv) => ({
       filename: 'remoteEntry.js',
       remotes: {
         products: 'products@http://localhost:8082/remoteEntry.js',
+        store: 'store@http://localhost:8083/remoteEntry.js',
       },
       exposes: {
         './components/Header': './src/components/Header.jsx',

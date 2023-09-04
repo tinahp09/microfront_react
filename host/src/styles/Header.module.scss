@@ -32,5 +32,12 @@ header {
         color: #f47458;
       }
     }
+    & .right {
+      display: flex;
+      align-items: center;
+      & a {
+        margin-left: 12px;
+      }
+    }
   }
 }

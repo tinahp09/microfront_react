@@ -3,6 +3,9 @@ import * as ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Products from './pages/products'
 import SingleProduct from './pages/single-product'
+import { StoreProvider } from 'store/redux/store'
+// import { Provider } from 'react-redux'
+// import store from './redux/store'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +18,9 @@ const router = createBrowserRouter([
   },
 ])
 ReactDOM.createRoot(document.getElementById('app')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <StoreProvider>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </StoreProvider>
 )

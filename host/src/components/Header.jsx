@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import Cookies from 'universal-cookie'
 import styles from '../styles/Header.module.scss'
+import { useStore } from 'store/redux/store'
 
 function Header() {
+  const { count } = useStore()
   const cookies = new Cookies()
   const name = cookies.get('Name')
   const token = cookies.get('Token')
@@ -23,19 +25,13 @@ function Header() {
         <p>
           Welcome Dear <span className={styles.name}>{name}</span>
         </p>
-        <div>
+        <div className={styles.right}>
+          <p>
+            cart: <span>{count}</span>
+          </p>
           <a className={styles.link} onClick={() => logout()}>
             Logout
           </a>
-          {/* <a
-            className={styles.link}
-            onClick={() =>
-              window.location.replace('http://localhost:8081/login')
-            }
-          >
-            {' '}
-            login
-          </a> */}
         </div>
       </div>
     </header>
